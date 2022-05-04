@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "name": "Samsung Galaxy A52s ",
+      "imageUrl": "https://content2.rozetka.com.ua/goods/images/big/263352967.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "width": "200",
+      "height": "200",
+      "price": "12999",
+      "id": 1
+    },
+    {
+      "name": "Xiaomi Redmi 9C ",
+      "imageUrl": "https://content2.rozetka.com.ua/goods/images/big/30689110.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "width": "200",
+      "height": "200",
+      "price": "5899",
+      "id": 2
+    },
+    {
+      "name": "Doogee N20 Pro ",
+      "imageUrl": "https://content2.rozetka.com.ua/goods/images/big/152391668.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "width": "200",
+      "height": "200",
+      "price": "6106",
+      "id": 3
+    },
+    {
+      "name": "Tecno Spark 7 ",
+      "imageUrl": "https://content1.rozetka.com.ua/goods/images/big/191605222.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "width": "200",
+      "height": "200",
+      "price": "5699",
+      "id": 4
+    }
+  ]
+}
