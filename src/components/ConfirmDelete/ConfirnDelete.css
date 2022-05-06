@@ -1,0 +1,7 @@
+.confirm__body{
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+}

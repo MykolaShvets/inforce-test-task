@@ -4,6 +4,7 @@ import { urls } from '../configs/urlConfig';
 
 export const productService = {
     getAll: () => axiosService.get<IProduct[]>(urls.products),
+    getById: (id: string | undefined) => axiosService.get<IProduct>(`${urls.products}/${id}`),
     createNew: (data: IProduct) => axiosService.post<IProduct>(urls.products, data),
     editById: (id: number, data: IProduct) => axiosService.patch<IProduct>(`${urls.products}/${id}`, data),
     deleteById: (id: number | undefined) => axiosService.delete(`${urls.products}/${id}`)

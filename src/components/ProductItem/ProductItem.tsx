@@ -1,23 +1,25 @@
 import React, { FC, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { IProduct } from '../../interfaces/productInterface';
-import { ProductModal } from '../ProductModal/ProductModal';
+import { ConfirmDelete } from '../ConfirmDelete/ConfirmDelete';
+import { Modal } from '../Modal/Modal';
 
 import './ProductItem.css';
 
 const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
-    const [isProductModalActive, setIsProductModalActive] = useState<boolean>(false);
+    const [isConfirm, setIsConfirm] = useState<boolean>(false);
 
     return (
-        <div onClick={() => <ProductModal product={ product }/>} className='item-box'>
-            <img src={ product.imageUrl } alt=''/>
-            <h2>{ product.name }</h2>
-            <button onClick={ () => setIsProductModalActive(!isProductModalActive) }>Info
-            </button>
-            <div className={ isProductModalActive ? 'modal active' : 'modal' }>
-                <button onClick={ () =>setIsProductModalActive(false) }>Close</button>
-                <ProductModal product={ product }/>
-            </div>
+        <div className='item-box'>
+             <Link to={product.id? product.id.toString() : ''} >
+                 <img src={ product.imageUrl } alt=''/>
+                 <h2>{ product.name }</h2>
+                </Link>
+            <button onClick={ () => setIsConfirm(true) }>Delete</button>
+            <Modal children={ <ConfirmDelete productId={ Number(product.id) } setCanceled={ setIsConfirm }/> }
+                   setActive={ setIsConfirm }
+                   active={ isConfirm }/>
         </div>
     );
 };

@@ -7,20 +7,24 @@ import { useAppDispatch } from '../../hooks/redux';
 
 import './Form.css';
 
-const Form: FC<{ product?: IProduct, modalAction: any }> = ({ product, modalAction }) => {
-    const {register, handleSubmit} = useForm();
+const Form: FC<{ product?: IProduct | null, modalAction: any }> = ({ product, modalAction }) => {
+    const { register, handleSubmit } = useForm();
     const dispatch = useAppDispatch();
 
     //have some problems with types...
     const formSubmit = (data: any) => {
 
+        const {name, imageUrl, count, width, height, weight} = data;
+
+        const newProduct: IProduct = {name, imageUrl, count, size: {width, height}, weight: `${weight}g`, comments: []}
+
         if (product) {
-            dispatch(editProduct({ id: Number(product.id), updatedProduct: data }));
+            dispatch(editProduct({ id: Number(product.id), updatedProduct: newProduct }));
             modalAction(false);
             return;
         }
 
-        dispatch(addNewProduct(data));
+        dispatch(addNewProduct(newProduct));
         modalAction(false);
     };
 
@@ -36,27 +40,28 @@ const Form: FC<{ product?: IProduct, modalAction: any }> = ({ product, modalActi
                        defaultValue={ product? `${product.imageUrl }` : ''}
                        { ...register('imageUrl') }/>
             </label>
-            <label>Description:
-                <input type='text'
-                       defaultValue={product? `${product.description }` : ''}
-                       { ...register('description') }/>
+            <label>Count:
+                <input type='number'
+                       defaultValue={ product? `${product.count }` : ''}
+                       { ...register('count') }/>
             </label>
             <label>Width:
-                <input type='text'
-                       defaultValue={ product? `${product.width}` : '' }
+                <input type='number'
+                       defaultValue={ product? `${product.size.width}` : '' }
                        { ...register('width') }/>
             </label>
             <label>Height:
-                <input type='text'
-                       defaultValue={ product? `${ product.height}` : '' }
+                <input type='number'
+                       defaultValue={ product? `${ product.size.height}` : '' }
                        { ...register('height') }/>
             </label>
-            <label>Price:
+            <label>Weight:
                 <input type='text'
-                       defaultValue={ product? `${product.price}` : '' }
-                       { ...register('price') }/>
+                       defaultValue={ product? `${product.weight }` : ''}
+                       { ...register('weight') }/>
             </label>
             <input type='submit'/>
+            <button onClick={ ()=>modalAction(false) }>Cancel</button>
         </form>
     );
 };

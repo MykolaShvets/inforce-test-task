@@ -1,3 +1,9 @@
+.products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .products{
     display: flex;
     gap: 20px;
@@ -5,21 +11,7 @@
     justify-content: center;
 }
 
-.new-prod-form{
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    transform: scale(0);
-    background: rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.new-prod-form.active{
-    transform: scale(1);
+.add__btn{
+    margin-top: 20px;
 }
-
